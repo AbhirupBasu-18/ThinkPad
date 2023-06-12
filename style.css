@@ -4,11 +4,11 @@
     background-color: #efe63f !important;
     font-family: 'Ubuntu', sans-serif;
 }
-.btn-outline-success{
+.r{
     background-color: grey !important;
     color: yellow !important;
 }
-.btn-outline-success:hover{
+.r:hover{
     color: green !important;
 }
 #x{
