@@ -11,6 +11,26 @@
 .btn-outline-success:hover{
     color: green !important;
 }
-.h1{
-    font-family: 'Secular One', sans-serif;
+#x{
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
 }
+#y{
+    margin-top: 5px;
+}
+#f{
+   margin-bottom: 3px !important;
+   margin-top: 1px !important;
+}
+.k{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+/*#delbtn{
+}
+#savebtn{
+    margin-top: 15px;
+    position: relative;
+    margin-left: 50px;
+}*/
