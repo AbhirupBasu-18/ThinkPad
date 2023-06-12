@@ -37,11 +37,11 @@ function showNotes() {
   }
   let html = "";
   Array.from(notesObj).forEach((element, index) => {
-    html += `<div class="card my-2 mx-2" style="width: 18rem;">
+    html += `<div class="noteCard card my-2 mx-2" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">Note ${index+1}</h5>
             <div class="form-group">
-                <textarea class="form-control" id="card-Txt${index+1}" rows="3">${element}</textarea>
+                <textarea class="form-control hagga" id="card-Txt${index+1}" rows="3">${element}</textarea>
               </div>
               <div class="k">
                 <button class="btn btn-primary" id="delbtn${index}" onclick="deleteNote(${index})">Delete Note</button>
@@ -60,7 +60,7 @@ function showNotes() {
 
 //Function to delete note
 function deleteNote(index) {
-  console.log(index);
+  //console.log(index);
   let notes = localStorage.getItem("notes");
   if (notes == null) {
     notesObj = [];
@@ -76,7 +76,7 @@ function deleteNote(index) {
 
 //Function to save note
 function saveNote(index) {
-  console.log(index); 
+  //console.log(index); 
   let notes = localStorage.getItem("notes");
   if (notes == null) {
     notesObj = [];
@@ -87,3 +87,24 @@ function saveNote(index) {
   localStorage.setItem("notes",JSON.stringify(notesObj));
   showNotes();
 }
+
+//search
+let i=0;
+let search = document.getElementById('searchTxt');
+search.addEventListener('input', function(){
+    let inputVal = search.value.toLowerCase();
+     //console.log('Input event fired!', inputVal);
+    let noteCards = document.getElementsByClassName('noteCard');
+    Array.from(noteCards).forEach(function(element){
+        let cardTxt = element.getElementsByTagName("textarea")[0].value.toLowerCase();
+        //console.log(element.getElementsByTagName("textarea")[0]);
+        //console.log('note value!', cardTxt);
+        if(cardTxt.includes(inputVal)){
+            element.style.display = "block";
+        }
+        else{
+            element.style.display = "none";
+        }
+        // console.log(cardTxt);
+  });
+});
